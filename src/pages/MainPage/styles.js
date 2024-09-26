@@ -16,7 +16,7 @@ export const Logo = styled.img`
 
 export const Title = styled.h1`
   font-size: 2.2rem;
-  color: ${(porps) => porps.theme.colors.white} 
+  color: ${(props) => props ? props.theme.colors.white : ''} 
 `;
 
 export const Form = styled.div`
@@ -36,9 +36,10 @@ export const Input = styled.input`
   font-size: 24px;
   margin-right: 24px;
   padding: 0 24px;
+  color: ${(props) => props.theme.colors.gray400};
 
   &::placeholder {
-    color: ${(porps) => porps.theme.colors.gray400};
+    color: ${(props) => props.theme.colors.gray400};
   }
 `;
 
@@ -47,14 +48,14 @@ export const Button = styled(Link)`
   align-items: center;
   justify-content:center;  
   background: rgba(0, 0, 0, .8);
-  color: ${(porps) => porps.theme.colors.white};
+  color: ${(props) => props.theme.colors.white};
   width: 80px;
   height: 58px; 
-  border: 3px solid ${(porps) => porps.theme.colors.white};
+  border: 3px solid ${(props) => props.theme.colors.white};
   transition: background 1s;
 
   &:hover{
-    color: ${(porps) => porps.theme.colors.gray900};
-    background: ${(porps) => porps.theme.colors.gray200};
+    color: ${(props) => props.theme.colors.gray900};
+    background: ${(props) => props.theme.colors.gray200};
   }
 `;
