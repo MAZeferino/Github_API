@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from 'react-router-dom'
 
 export const Container = styled.div`
   display: flex;
@@ -41,14 +42,14 @@ export const Input = styled.input`
   }
 `;
 
-export const Button = styled.button`
+export const Button = styled(Link)`
   display: flex;
   align-items: center;
   justify-content:center;  
   background: rgba(0, 0, 0, .8);
   color: ${(porps) => porps.theme.colors.white};
   width: 80px;
-  height: 64px; 
+  height: 58px; 
   border: 3px solid ${(porps) => porps.theme.colors.white};
   transition: background 1s;
 
