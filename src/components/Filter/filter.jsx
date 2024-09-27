@@ -1,18 +1,36 @@
 import React from "react";
+import PropTypes from "prop-types";
+
 import { Container, Selector, Cleaner } from "./styles"
 
-export default function Filter() {
-  const langs = [
-    {name: 'Javascripts', count: 5, color: '#FCC419'},
-    {name: 'Shell', count: 2, color: '#7E5CEF'},
-    {name: 'PHP', count: 1, color: '#E03131'},
-  ]
+export default function Filter({ langs, filter, onclick }) {
 
-  const selectors = langs.map((lang) => <Selector key={lang.name.toLowerCase()} color={lang.color}><span>{lang.name}</span><span>{lang.count}</span></Selector>)
+  const selectors = langs.map((lang) => 
+    <Selector key={lang.name.toLowerCase()} color={lang.color} className={filter === lang.name ? 'selected' : ''} onClick={() => onclick && onclick(lang.name)}>
+      <span>{lang.name}</span><span>{lang.count}</span>
+    </Selector>
+  )
+  
   return (
     <Container>
       {selectors}
-      <Cleaner>Limpar</Cleaner>
+      <Cleaner onClick={() => onclick && onclick(undefined)}>Limpar</Cleaner>
     </Container>
   );
 } 
+Filter.defaultProps = {
+  filter: null,
+  onclick: null,
+}
+
+Filter.propTypes = {
+  langs: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      count: PropTypes.number.isRequired,
+      color: PropTypes.string, 
+    }).isRequired,
+  ).isRequired,
+  filter: PropTypes.string,
+  onclick: PropTypes.func,
+}

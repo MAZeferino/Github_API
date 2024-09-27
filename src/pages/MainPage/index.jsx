@@ -15,7 +15,7 @@ export default function MainPage() {
       <Title>Github User API</Title>
       <Form>
         <Input placeholder="Nickname..." value={nick} onChange={(event) => setNick(event.target.value)} />
-        <Button to={`/${nick}/repositories}`}>
+        <Button to={`/${nick}/repositories`}>
           <MdSearch size={42} />
         </Button>
       </Form>
