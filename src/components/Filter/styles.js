@@ -4,7 +4,7 @@ export const Container = styled.div`
   display: grid;
   grid-template-columns: auto;
   gap:  0.2rem;
-  margin: 1rem auto;
+  margin: 0 auto 1rem auto;
   padding-right: 2rem; 
 
   @media screen and (max-width: ${(props) => props.theme.breakpoints.md}){

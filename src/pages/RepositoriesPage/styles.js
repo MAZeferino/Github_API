@@ -22,20 +22,20 @@ export const Sidebar = styled.aside`
     background: ${(props) => props.theme.colors.gray900};
     min-width: 20rem;
     max-height: 100vh;
-    overflow-y: hidden;
 `;
 
 export const Main = styled.section`
     background: ${(props) => props.theme.colors.gray800};
     width: 100%;
-    height: 90vh;
-    overflow-y: hidden;
-    padding: 40px;
+    height: 100%;
+    min-height: 98vh;
+    padding: 1vh 40px;
 
     @media screen and (max-width: ${(props) => props.theme.breakpoints.md}) {
       height: 100%;
     }
     @media screen and (max-width: ${(props) => props.theme.breakpoints.sm}) {
-      padding: 40px 20px;
+      width: 86vw;
+      padding: 3vw 5vw;
     }
 `;

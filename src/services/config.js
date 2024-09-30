@@ -16,8 +16,7 @@ export const langColors = {
 };
 
 export const getLangs = (repositories) => {
-  console.log(repositories)
-  let stats = (repositories.map((repo) => repo.lang).reduce((data, language) => ({
+  let stats = (repositories.map((repo) => repo.language).reduce((data, language) => ({
     ...data,
     [language]: (data[language] || 0) + 1,
   }), []))

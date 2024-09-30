@@ -28,7 +28,6 @@ export default function RepositoriesPage() {
       setUser(userResponse.data);
       setRepositories(repositoriesResponse.data);
       setFilters(getLangs(repositoriesResponse.data));
-      
       setLoading(false);
     };
     
@@ -50,9 +49,9 @@ export default function RepositoriesPage() {
         <Profile user={user} />
         <Filter langs={filters} filter={filter} onclick={onFilterClick} />
       </Sidebar>
-      {/* <Main> */}
-        {/* <Repositories repositories={repositories} filter={filter} /> */}
-      {/* </Main> */}
+      <Main>
+        <Repositories repositories={repositories} filter={filter} />
+      </Main>
     </Container>
   );
 }

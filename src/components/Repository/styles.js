@@ -12,6 +12,7 @@ export const Container = styled.div`
 export const Name = styled.h3`
   font-size: ${(props) => props.theme.fontSize.lg};
   font-weight: normal;
+  line-break: anywhere;
   margin: 0;
 `;
 
