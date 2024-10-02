@@ -24,6 +24,6 @@ Repository.propTypes = {
     name: PropTypes.string.isRequired,
     description: PropTypes.string,
     url: PropTypes.string.isRequired, 
-    lang: PropTypes.string,
+    language: PropTypes.string,
   }).isRequired,
 };
