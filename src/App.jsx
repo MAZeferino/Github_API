@@ -1,6 +1,6 @@
 import React from "react";
 
-import { HashRouter } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom";
 
 import { Normalize } from "styled-normalize";
 import { AppRoutes } from "./routes";
@@ -10,12 +10,12 @@ import { Theme } from "./styles/Theme";
 
 export default function App() {
   return (
-    <HashRouter basename={process.env.PUBLIC_URL}>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Theme>
         <AppRoutes />
         <GlobalStyle />
         <Normalize />
       </Theme>
-    </HashRouter>
+    </BrowserRouter>
   );
 }
